@@ -1,3 +1,4 @@
+# id: 任意唯一标识; name: 必须等于 package.json 的 name
 - insert:
-    - id: local-wb-pulse
-      name: local-wb-pulse
+    - id: dsh-workbuddy-pulse
+      name: dsh-workbuddy-pulse
