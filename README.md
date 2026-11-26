@@ -78,11 +78,26 @@
 
 ## 安装
 
+**方式一：从 GitHub 直接装**（现在可用）
+
+```sh
+dsh plugin --profile web add https://github.com/music875/dsh-workbuddy-pulse
+```
+
+**方式二：从 npm 装**（发布后可用，更省事）
+
 ```sh
 dsh plugin --profile web add dsh-workbuddy-pulse
 ```
 
-重启引擎（设置 › 本机引擎 › 重启）后，输入框上方出现状态条。
+**方式三：本地开发**
+
+```sh
+git clone https://github.com/music875/dsh-workbuddy-pulse
+dsh plugin --profile web add ./dsh-workbuddy-pulse
+```
+
+装完**重启引擎**（设置 › 本机引擎 › 重启），输入框上方出现状态条。
 
 **前置条件**：本机已登录 WorkBuddy，凭据在 `$DSH_HOME/workbuddy-vault/<region>/*.json`。
 
@@ -136,10 +151,11 @@ dsh plugin --profile web add dsh-workbuddy-pulse
 
 ## 已知限制
 
-- **只对 WorkBuddy 完整生效**。其他厂商没有公开的队列/折扣接口，插件不会猜。
+- **只对 WorkBuddy 完整生效**。其他厂商没有公开的队列/折扣接口，插件不会猜，会直接不显示。
 - **「轻微拥堵」「极度拥堵」两个等级来自官方词表，但作者实测未触发**。凌晨连续采样 180 次只得到 `idle` / `normal`，推测高峰期才会出现。
 - **DeepSeek 官方错峰规则是静态表**（核对于 2026-11-27，出处见代码注释）。厂商调价需要更新插件。
-- **积分每 3 分钟刷新**，不是逐秒。拥堵每 90 秒，倍率与折扣 30 分钟。
+- **积分显示的是接口返回值，不是估算**，但查询间隔是 3 分钟（切换模型时立即重查）。
+  不是逐秒轮询：积分变化慢，高频查询只会撞限流、耗电。拥堵每 90 秒，倍率与折扣 30 分钟。
 
 ## 开发
 
