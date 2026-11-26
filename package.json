@@ -1,0 +1,68 @@
+{
+  "name": "dsh-workbuddy-pulse",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "dsh": ">=0.2.1-rc.2 <0.3.0-0"
+  },
+  "dshGo": {
+    "v": 1,
+    "title": {
+      "zh": "WorkBuddy 脉搏",
+      "en": "WB pulse"
+    },
+    "icon": "chart",
+    "contributes": {
+      "composer.strip": [
+        {
+          "id": "pulse",
+          "icon": "chart",
+          "panel": "pulse-panel"
+        }
+      ],
+      "panels": [
+        {
+          "id": "pulse-panel",
+          "title": {
+            "zh": "WorkBuddy 脉搏",
+            "en": "WB pulse"
+          },
+          "icon": "chart",
+          "placement": [
+            "features",
+            "chat.panel"
+          ]
+        }
+      ]
+    }
+  },
+  "description": "WorkBuddy 状态条：在 dsh-go 输入框上方显示峰谷期、拥堵状态与实时积分。英: Peak/off-peak rate, queue level and live credits for WorkBuddy models in the dsh-go composer.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-go",
+    "deepseek-harness",
+    "workbuddy",
+    "codebuddy",
+    "credits",
+    "quota",
+    "peak",
+    "busy"
+  ],
+  "license": "MIT",
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/music875/dsh-workbuddy-pulse.git"
+  }
+}
