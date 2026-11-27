@@ -7,7 +7,7 @@
 ```
 正常 • 积分 • 220           ← WorkBuddy 国内版
 峰 • 原价 • ¥0.00           ← DeepSeek 官方 API（错峰时段 + 余额）
-资源包 49.7万               ← 智谱 GLM（资源包剩余）
+限流中 · 余 76.7万           ← 智谱 GLM（有额度但排队）
 积分 • 329                  ← WorkBuddy 国际版
 ```
 
@@ -41,7 +41,7 @@ WorkBuddy 等渠道只是其中一种适配。
 | 厂商 | 键值 | 显示什么 |
 |---|---|---|
 | DeepSeek | `DEEPSEEK_API_KEY` | 错峰峰谷 + `¥0.00` 现金余额 |
-| 智谱 BigModel | `CUSTOM_OPEN_BIGMODEL_2_API_KEY` | 资源包剩余 token |
+| 智谱 BigModel | `CUSTOM_OPEN_BIGMODEL_2_API_KEY` | 真实探测：可用 / 限流中·余量 / 无额度 |
 | Moonshot / Kimi | `MOONSHOT_API_KEY` | 现金余额 |
 | 硅基流动 | `SILICONFLOW_API_KEY` | 现金余额 |
 | OpenRouter | `OPENROUTER_API_KEY` | 美元额度 |
@@ -63,7 +63,8 @@ WorkBuddy 等渠道只是其中一种适配。
 谷 • 0.06 • 空闲 • 积分 • 220  国内版 DeepSeek 折扣时段
 峰 • 原价 • ¥0.00           DeepSeek 官方 API，高峰 + 现金余额
 谷 • 5 折 • ¥0.00           DeepSeek 官方 API，错峰 + 现金余额
-资源包 49.7万               智谱 GLM-5.3-Flash，专用资源包剩余
+限流中 · 余 76.7万           智谱 GLM，有额度但被限流
+无额度                      智谱 GLM，包已用尽
 积分 • 329                  WorkBuddy 国际版
 ```
 
@@ -119,7 +120,7 @@ dsh plugin --profile web add https://github.com/music875/dsh-model-pulse
 
 - **只有 dsh-go 原生界面显示**，网页/桌面版看不到。
 - **官方 API 峰谷只有 DeepSeek**：其它厂商没有可靠的公开错峰时段数据，不编造。
-- **智谱显示的是资源包剩余 token 不是钱**：它的计费体系是资源包 + 后付费，没有现金余额概念。同系列 `flash` / `flashx` / `flashx-legal` 共用一个专用包。
+- **智谱用真实请求探测状态**：它的账单接口会返回滞后/失真的余额（包已失效仍显示历史数字），所以改成发一次 `max_tokens=1` 的最小请求，按返回判断「可用 / 限流中 / 无额度」。每 10 秒一次，几乎不耗额度。
 - **拥堵只有 WorkBuddy 国内版有**：官方 API 没有公开的队列接口。
 - **余额查询有频率限制**：10 秒刷新已经是很短的间隔，再短只会撞限流、耗电，余额本身变化也慢。
 - **积分显示的是接口返回值**，不是估算；明日预计只在面板里，状态条只显示当前积分。
