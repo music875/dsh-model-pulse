@@ -1,6 +1,6 @@
 # dsh-workbuddy-pulse
 
-在 dsh-go 手机 App 的输入框上方显示一条状态条：**峰谷期 · 拥堵状态 · 实时积分**。
+在 dsh-go 手机 App 的输入框上方显示一条状态条：**峰谷期 · 拥堵状态 · 积分余额**。
 
 [![license](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](#)
 
