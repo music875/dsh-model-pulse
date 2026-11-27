@@ -1,4 +1,4 @@
 # id: 任意唯一标识; name: 必须等于 package.json 的 name
 - insert:
-    - id: dsh-workbuddy-pulse
-      name: dsh-workbuddy-pulse
+    - id: dsh-model-pulse
+      name: dsh-model-pulse

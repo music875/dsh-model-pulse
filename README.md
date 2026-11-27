@@ -1,8 +1,8 @@
-# dsh-workbuddy-pulse
+# dsh-model-pulse
 
 **在 dsh-go 手机 App 的输入框上方，常驻一行当前模型的关键读数。**
 
-名字里带 workbuddy 是历史原因。它现在是一个**通用的模型状态条**：不管你用 WorkBuddy、DeepSeek 官方 API、智谱、Moonshot、OpenRouter 还是别的渠道，只要能查到数据，就在输入框上方显示；查不到就自动省略，绝不编造。
+这是一个**通用的模型状态条**：不管你用 WorkBuddy、DeepSeek 官方 API、智谱、Moonshot、OpenRouter 还是别的渠道，只要能查到数据，就在输入框上方显示；查不到就自动省略，绝不编造。
 
 ```
 正常 • 积分 • 220           ← WorkBuddy 国内版
@@ -11,7 +11,7 @@
 积分 • 329                  ← WorkBuddy 国际版
 ```
 
-适配 WorkBuddy 只是顺手——它恰好是数据最全的一家。
+WorkBuddy 等渠道只是其中一种适配。
 
 ## 它显示什么
 
@@ -96,7 +96,7 @@ dsh-go 手机 App 的原生界面（v1.3 实测）。用的是 `composer.strip` 
 ## 安装
 
 ```sh
-dsh plugin --profile web add https://github.com/music875/dsh-workbuddy-pulse
+dsh plugin --profile web add https://github.com/music875/dsh-model-pulse
 ```
 
 装完在 App 里**重启本机引擎**（设置 › 本机引擎 › 重启）生效。
