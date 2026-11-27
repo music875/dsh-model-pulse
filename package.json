@@ -1,6 +1,6 @@
 {
   "name": "dsh-workbuddy-pulse",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "type": "module",
   "main": "lib/index.js",
   "dsh": {
@@ -42,18 +42,19 @@
       ]
     }
   },
-  "description": "WorkBuddy 状态条：在 dsh-go 输入框上方显示峰谷期、拥堵状态与实时积分。英: Peak/off-peak rate, queue level and live credits for WorkBuddy models in the dsh-go composer.",
+  "description": "通用模型状态条 for dsh-go：峰谷/拥堵/积分/余额，适配 WorkBuddy 及 8 家官方 API",
   "keywords": [
     "dsh",
     "dsh-plugin",
     "dsh-go",
     "deepseek-harness",
     "workbuddy",
-    "codebuddy",
     "credits",
+    "balance",
     "quota",
     "peak",
-    "busy"
+    "busy",
+    "model-status"
   ],
   "license": "MIT",
   "files": [
