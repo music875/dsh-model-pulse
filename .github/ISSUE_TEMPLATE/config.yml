@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 上游 WorkBuddy 插件
+    url: https://github.com/dingminhua/dsh-connect-workbuddy/issues
+    about: WorkBuddy 模型接入本身的问题（登录/积分/模型列表）请去这里
