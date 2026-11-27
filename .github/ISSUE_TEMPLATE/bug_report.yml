@@ -1,0 +1,57 @@
+name: Bug 反馈 / Bug report
+description: 插件显示不对、状态条不出现、数据不更新等问题
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        谢谢反馈！请尽量填写下面几项，能帮我更快定位问题。
+
+  - type: input
+    id: model
+    attributes:
+      label: 当前模型
+      description: 输入框上显示的模型名，例如 `workbuddy / deepseek-v4.1-flash`
+      placeholder: "workbuddy / hy4flash"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: region
+    attributes:
+      label: 区域
+      description: 你用的是哪个 WorkBuddy
+      options:
+        - "国内版 (workbuddy)"
+        - "国际版 (workbuddy-global)"
+        - "不是 WorkBuddy（智谱/免费池/其他）"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: 发生了什么
+      description: 状态条显示了什么、你期望显示什么
+      placeholder: |
+        实际显示：只有积分
+        期望显示：峰谷 + 拥堵 + 积分
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: 补充信息（可选）
+      description: 什么时候开始的、切模型后是否出现、重启引擎后是否仍存在
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: 插件版本 / dsh-go 版本
+      placeholder: "1.0.0 / dsh-go 1.0.13"
+    validations:
+      required: false
