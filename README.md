@@ -78,23 +78,8 @@
 
 ## 安装
 
-**方式一：从 GitHub 直接装**（现在可用）
-
 ```sh
 dsh plugin --profile web add https://github.com/music875/dsh-workbuddy-pulse
-```
-
-**方式二：从 npm 装**（发布后可用，更省事）
-
-```sh
-dsh plugin --profile web add dsh-workbuddy-pulse
-```
-
-**方式三：本地开发**
-
-```sh
-git clone https://github.com/music875/dsh-workbuddy-pulse
-dsh plugin --profile web add ./dsh-workbuddy-pulse
 ```
 
 装完**重启引擎**（设置 › 本机引擎 › 重启），输入框上方出现状态条。
