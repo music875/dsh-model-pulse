@@ -1,0 +1,37 @@
+name: 功能建议 / Feature request
+description: 希望状态条增加或改动某项显示
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        欢迎提建议。请说明你想看到什么、为什么需要。
+
+  - type: textarea
+    id: want
+    attributes:
+      label: 想要什么功能
+      description: 例如「状态条加个当日消耗积分」「峰期时提醒我换模型」
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: 解决什么问题
+      description: 你现在遇到了什么不方便的地方
+    validations:
+      required: true
+
+  - type: dropdown
+    id: provider
+    attributes:
+      label: 你主要用哪个渠道
+      options:
+        - "WorkBuddy 国内版"
+        - "WorkBuddy 国际版"
+        - "DeepSeek 官方"
+        - "其他"
+    validations:
+      required: false
